@@ -1,16 +1,14 @@
 var App = App || {};
 App.Model = App.Model || {};
 
-App.Model.Menu = Backbone.Model.extend({
+App.Model.MenuItem = Backbone.Model.extend({
 	defaults : {
-		items : [
-			{
-				label : 'Person',
-				url : '#person'
-			},{
-				label : 'Motorcycles',
-				url : '#moto'
-			}
-		]
+		label : 'Item',
+		url : '#',
+		active : false
 	}
-})
+});
+
+App.Model.Menu = Backbone.Collection.extend({
+	model : App.Model.MenuItem,
+});

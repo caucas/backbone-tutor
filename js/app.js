@@ -2,13 +2,23 @@ var App = App || {};
 App.initialize = function() {
 	Backbone.history.start();
 
-	var menu = new App.Model.Menu();
-
 	new App.View.Menu({
-		model : menu,
+		model : App.Menu,
 		el : $('#menu')
 	});
 }
+
+App.Menu = new App.Model.Menu([{
+		id : 'person',
+		label : 'Person',
+		url : '#person',
+		active : false
+	},{
+		id : 'moto',
+		label : 'Motorcycle',
+		url : '#moto',
+		active : false
+	}]);
 
 App.onRoute = function(View, options) {
 	App.view && App.view.destroy();
@@ -34,6 +44,7 @@ App.Router.on('route:person', function() {
 	]);
 	App.onRoute(App.View.Person, {
 		collection : persons,
+		menu : App.Menu,
 		el : $('#content')
 	});
 });
@@ -50,6 +61,7 @@ App.Router.on('route:motorcycle', function() {
 	]);
 	App.onRoute(App.View.Motorcycle, {
 		collection : motorcycles,
+		menu : App.Menu,
 		el : $('#content')
 	});
 });

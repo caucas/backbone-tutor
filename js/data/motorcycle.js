@@ -7,3 +7,7 @@ App.Model.Motorcycle = Backbone.Model.extend({
 		model : ''
 	}
 });
+
+App.Model.Motorcycles = Backbone.Collection.extend({
+	model : App.Model.Motorcycle
+});

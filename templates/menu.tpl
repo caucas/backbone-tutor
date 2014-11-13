@@ -1,7 +1,8 @@
+<span>Menu</span>
 <ul>
-	{{#items}}
-	<li>
-		<a href="{{url}}">{{label}}</a>
+	{{#.}}
+	<li id="{{id}}">
+		<a class="{{#active}}active{{/active}}" href="{{url}}">{{label}}</a>
 	</li>
-	{{/items}}
+	{{/.}}
 </ul>

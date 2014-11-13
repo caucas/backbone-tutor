@@ -7,3 +7,7 @@ App.Model.Person = Backbone.Model.extend({
 		age : 0
 	}
 });
+
+App.Model.Persons = Backbone.Collection.extend({
+	model : App.Model.Person
+});

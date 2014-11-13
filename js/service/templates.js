@@ -3,7 +3,7 @@ var Templates = {};
 	var templates = {};
 	$(function init() {
 		$('[type="html/template"]').each(function(i, e) {
-			templates[e.id] = $.get(e.getAttribute('path') + '/' + e.id);
+			templates[e.id] = $.get(e.getAttribute('template'));
 		});
 	});
 	Templates.get = function(id) {

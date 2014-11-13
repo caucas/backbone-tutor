@@ -5,6 +5,7 @@ App.View.Menu = Backbone.View.extend({
 	template : 'menu.tpl',
 	initialize : function() {
 		this.render();
+		this.model.on('change', this.render.bind(this));
 	},
 	render : function() {
 		var $this = this.$el;
@@ -14,6 +15,6 @@ App.View.Menu = Backbone.View.extend({
 		});
 	},
 	destroy : function() {
-
+		this.$el.empty();
 	}
 });
